@@ -1,0 +1,9 @@
+#Do not track reporting folders
+Reports/
+Screenshots/
+
+#Do not track doc/docx/swp files
+
+*.docx
+*.doc
+*.swp

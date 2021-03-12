@@ -1,0 +1,12 @@
+.hidden{
+    display: none;
+}
+
+.container{
+    text-align: center;
+    vertical-align: middle;
+}
+
+table,th,tr{
+    border: 1px solid black;
+}

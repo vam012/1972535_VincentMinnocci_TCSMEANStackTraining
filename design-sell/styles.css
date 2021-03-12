@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+.divPlacementClass{
+    width:50%;
+    margin:10px auto;
+    padding: 20px;
+    background-color: lightgrey;
+    border-radius: 50%;
+}
+.fancyHeader{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    text-decoration:line-through;
+    text-transform: uppercase;
+    text-align:center;
+}
+
+.basicParagraph{
+    font-size: 20px;
+    text-align: center;
+    color: red;
+    text-shadow: 0px 00px 6px blue;
+    padding: 0px 10%;
+}
+
+
+.basicParagraph::first-letter{
+    font-size: 30px;
+}

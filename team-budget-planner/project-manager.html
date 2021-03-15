@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="headerText">Project Managers</h1>
+    <h3 class="headerText"><a href="main-page.html">Back</a></h3>
+    <hr/>
+    <div class="container">
+        <label>Client Name: </label><input type="Text" id="cName"/><br/>
+        <label>Project Name: </label><input type="Text" id="pName"/><br/> 
+        <label>Price: </label><input type="Text" id="price"/><br/>
+        <input type="button" value="Add Details" onClick="pullData()"><br/>
+        <input type="button" value="Clear Inputs" onClick="clearInputs()"><br/>
+        <input type="button" value="Add 5 Random Projects " onClick="fillWithData()"><br/>
+    </div>
+    <script src="budget.js"></script>
+</body>
+</html>

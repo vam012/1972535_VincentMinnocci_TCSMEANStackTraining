@@ -2,9 +2,15 @@
     display: none;
 }
 
+.headerText{
+    text-align: center;
+}
+
 .container{
     text-align: center;
     vertical-align: middle;
+    width:50%;
+    margin:10px auto;
 }
 
 table,th,tr{

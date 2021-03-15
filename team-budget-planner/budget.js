@@ -1,11 +1,11 @@
 function validate(input){
     if (isNaN(input)){
-        window.alert("Must input a number for price and time estimates");
+        window.alert("Must input a number for price estimates");
         return -1;
     }else{
         var temp = eval(input);
         if (input < 0){
-            window.alert("Must input a positive number for price and time estimates");
+            window.alert("Must input a positive number for price estimates");
             return -1;
         }
         return temp;
@@ -14,73 +14,43 @@ function validate(input){
 
 function clearInputs(){
     document.getElementById("cName").value="";
+    document.getElementById("pName").value="";
     document.getElementById("price").value="";
-    document.getElementById("timeEst").value="";
 }
 
-function getClientName(list){
+function randomListChoice(list){
     return list[Math.floor(Math.random() * list.length)];
 }
 
 var clientList = ['Company A','Company B','Company C','Company D'];
+var projectList = ['Project A','Project B','Project C','Project D','Project E','Project F','Project G','Project H','Project I','Project J']
 function fillWithData(){
-    for (let i = 0; i < 10; i++) {
-        document.getElementById("cName").value=getClientName(clientList);
-        document.getElementById("price").value=Math.floor((Math.random() * 10000) + 1);
-        document.getElementById("timeEst").value=Math.floor((Math.random() * 40) + 1);
+    for (let i = 0; i < 5; i++) {
+        document.getElementById("cName").value=randomListChoice(clientList);
+        document.getElementById("pName").value=randomListChoice(projectList);
+        document.getElementById("price").value=Math.floor((Math.random() * 50000) + 1);
         pullData();
     }
+    window.alert("Sucessfully added 5 random projects!");
 }
 
-function addInputToList(obj){
-    var tab = document.getElementById("projectList");
-    var tabBody = tab.getElementsByTagName("tbody")[0];
-    var newRow = tabBody.insertRow(tabBody.length);
-
-    newRow.insertCell(0).innerHTML="<tr>"+obj.cName+"</tr>";
-    newRow.insertCell(1).innerHTML="<tr>"+obj.price+"</tr>";
-    newRow.insertCell(2).innerHTML="<tr>"+obj.timeEst+"</tr>";
-}
 
 function pullData(){
     var obj={};
     obj.cName = document.getElementById("cName").value;
+    obj.pName = document.getElementById("pName").value;
     obj.price = validate(document.getElementById("price").value);
     if (obj.price == -1){
         clearInputs();
         return;
     }
-    obj.timeEst = validate(document.getElementById("timeEst").value);
-    if (obj.timeEst == -1){
-        clearInputs();
-        return;
-    }
     clearInputs();
-    document.getElementById("reportDiv").className="hidden";
-    addInputToList(obj);
     addObjectToStorage(obj);
 }
 
-var holdObj = [];
-
+var i = 0;
 function addObjectToStorage(obj){
-    var temp = [];
-    temp.push(obj.cName);
-    temp.push(obj.price);
-    temp.push(obj.timeEst);
-
-    holdObj.push(temp);
-    sessionStorage.setItem("projects",holdObj);
-}
-
-function pullObjectFromStorage(){
-    return sessionStorage.getItem("projects");
-}
-
-function generateReport(){
-    document.getElementById("reportDiv").className="";
-    var projectObj = pullObjectFromStorage();
-    console.log(projectObj);
-    var holdArr = projectObj.split(',');
-    console.log(holdArr);
+    console.log(obj)
+    sessionStorage.setItem(toString(i),JSON.stringify(obj));
+    i++;
 }

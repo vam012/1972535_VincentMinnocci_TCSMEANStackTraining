@@ -9,16 +9,18 @@
 </head>
 <body>
     <h1 class="headerText">Project Managers</h1>
-    <h3 class="headerText"><a href="main-page.html">Back</a></h3>
+    <h2 class="headerText"><a href="main-page.html">Back</a></h2>
     <hr/>
     <div class="container">
+        <h3 class="headerText">Add a new project</h3><hr/>
         <label>Client Name: </label><input type="Text" id="cName"/><br/>
         <label>Project Name: </label><input type="Text" id="pName"/><br/> 
-        <label>Price: </label><input type="Text" id="price"/><br/>
+        <label>Price: $</label><input type="Text" id="price"/><br/>
         <input type="button" value="Add Details" onClick="pullData()"><br/>
         <input type="button" value="Clear Inputs" onClick="clearInputs()"><br/>
-        <input type="button" value="Add 5 Random Projects " onClick="fillWithData()"><br/>
+        <input type="button" value="Add 5 Random Projects " onClick="fillWithData()"><br/><br/>
+        <input type="button" value="DELETE ALL PROJECTS" onClick="clearSessionStorage()"><br/>
     </div>
-    <script src="budget.js"></script>
+    <script src="project-manager.js"></script>
 </body>
 </html>

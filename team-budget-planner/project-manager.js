@@ -34,12 +34,23 @@ function fillWithData(){
     window.alert("Sucessfully added 5 random projects!");
 }
 
+function clearSessionStorage(){
+    sessionStorage.clear()
+    projID=0;
+    window.alert("Sucessfully deleted all projects from session storage");
+}
+
 
 function pullData(){
     var obj={};
     obj.cName = document.getElementById("cName").value;
     obj.pName = document.getElementById("pName").value;
     obj.price = validate(document.getElementById("price").value);
+    if (obj.pName == "" || obj.cName == ""){
+        window.alert("Client name and Project name must be specified!");
+        clearInputs();
+        return;
+    }
     if (obj.price == -1){
         clearInputs();
         return;

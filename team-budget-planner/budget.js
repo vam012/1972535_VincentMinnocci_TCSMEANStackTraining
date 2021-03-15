@@ -48,9 +48,16 @@ function pullData(){
     addObjectToStorage(obj);
 }
 
-var i = 0;
+var projID = findNextObjNum();
+function findNextObjNum(){
+    var i=0;
+    while(sessionStorage.key(i)!=null){
+        i++;
+    }
+    return i;
+}
+
 function addObjectToStorage(obj){
-    console.log(obj)
-    sessionStorage.setItem(toString(i),JSON.stringify(obj));
-    i++;
+    sessionStorage.setItem('project'+projID.toString(),JSON.stringify(obj));
+    projID++;
 }

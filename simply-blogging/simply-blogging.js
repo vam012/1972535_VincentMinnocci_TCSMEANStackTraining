@@ -12,6 +12,17 @@ function submitArticle(){
         window.alert("Description must be defined");
         return;
     }
+
+    //if no bg image given:
+    //      67% chance it generates a random one
+    //      33% chance it gives a random color
+    if(obj.image == ""){
+        if(Math.random() >= .33){
+            var w = Math.floor(Math.random()*200) +200;
+            var h = Math.floor(Math.random()*200) +200;
+            obj.image = " https://placeimg.com/"+w+"/"+h+"/any";
+        }
+    }
     addArticleRow(obj,sessionKey);
     addObjectToStorage(obj);
 }

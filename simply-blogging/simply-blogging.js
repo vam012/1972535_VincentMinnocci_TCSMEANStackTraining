@@ -18,8 +18,8 @@ function submitArticle(){
     //      33% chance it gives a random color
     if(obj.image == ""){
         if(Math.random() >= .33){
-            var w = Math.floor(Math.random()*200) +200;
-            var h = Math.floor(Math.random()*200) +200;
+            var w = Math.floor(Math.random()*200) +800;
+            var h = Math.floor(Math.random()*200) +800;
             obj.image = " https://placeimg.com/"+w+"/"+h+"/any";
         }
     }

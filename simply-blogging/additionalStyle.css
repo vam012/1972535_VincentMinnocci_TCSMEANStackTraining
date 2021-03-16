@@ -1,0 +1,30 @@
+.articleContent{
+    margin:0 0 2%;
+    text-align: center;
+    color:black;
+    background-size: 100% auto;
+    background-position: 0% 50%;
+    border: 1px solid darkgrey;
+}
+.articleContent:first-of-type h1{
+    background-color:rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    margin-top:2%;
+}
+.articleContent:first-of-type p{
+    background-color:rgba(255,255,255,0.8);
+    margin-top: 2%;
+    font-size:1.1em;
+}
+
+.rowMargin{
+    margin: 0 0 2%;
+}
+
+.buttonMargin{
+    margin:1% 2.5%;
+}
+
+#addArticleDiv{
+    margin-top:1%;
+}

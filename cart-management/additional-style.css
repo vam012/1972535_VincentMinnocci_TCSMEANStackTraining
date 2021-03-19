@@ -1,0 +1,14 @@
+#header{
+    text-align: center;
+}
+
+#cartLink{
+    text-align: right;
+}
+
+.item{
+    border: 1px solid black;
+    text-align: center;
+    margin-bottom:1%;
+    padding:1% 0;
+}

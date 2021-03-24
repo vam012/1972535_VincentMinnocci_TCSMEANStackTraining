@@ -1,1 +1,42 @@
-<p>register works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class=col>
+            <h2>Register a User</h2>
+            <h5 class="text-danger">This will delete all previous user data and entries</h5>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <form [formGroup]='createRef' (ngSubmit)=registerUser()>
+                <div class="row justify-content-center">
+                    <label>First Name: </label> <input type="text" formControlName=fName>
+                </div>
+                <div class="row justify-content-center">
+                    <label>Last Name: </label> <input type="text" formControlName=lName>
+                </div>
+                <div class="row justify-content-left">
+                    <label>UserName: </label> <input type="text" formControlName=user>
+                </div>
+                <div class="row justify-content-center">
+                    <label>Password: </label> <input type="password" formControlName=pass>
+                </div>
+                <br/>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <input type="submit" value="Submit" class="btn btn-primary"> 
+                    </div>   
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <p class="text-danger">{{msg}} </p>
+        </div>   
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <button class="btn btn-secondary" (click)="toLogin()">Go To Login</button>
+        </div>   
+    </div>
+</div>

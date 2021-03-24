@@ -1,1 +1,54 @@
-<p>portfolio works!</p>
+<div class=container>
+    <h2>Portfolio Page</h2>
+    <h3>Welcome, {{loginInfo.fName}} {{loginInfo.lName}}</h3>
+    <h4>aka. {{loginInfo.userName}}</h4>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <form [formGroup]='entryRef' (ngSubmit)=addEntry()>
+                <div class="row justify-content-left">
+                    <label>Name: </label> <input type="text" formControlName=name>
+                </div>
+                <div class="row justify-content-center">
+                    <label>Phone: </label> <input type="text" formControlName=phone>
+                </div>
+                <br/>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <input type="submit" value="Submit Entry" class="btn btn-primary" id=subBtn> 
+                    </div>   
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <p class=text-danger>{{msg}}</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <button class="btn btn-secondary" (click)="backToRegister()">Back to Registration </button>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-secondary" (click)="backToLogin()">Back to Login </button>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class=col-12>
+            <table class="table table-striped">
+                <thead>
+                    <th>Name</th>
+                    <th>Phone #</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let entry of tableEntries'>
+                        <td>{{entry.name}}</td>
+                        <td>{{entry.phone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

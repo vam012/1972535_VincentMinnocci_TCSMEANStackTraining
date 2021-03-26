@@ -1,0 +1,34 @@
+<div class=container>
+    <h2>Quiz</h2>
+    <form [formGroup]='questRef' (ngSubmit)="submitAnswers()">
+        <div class="row justify-content-center" *ngFor="let quest of qArr; let i ">
+            <h3>{{quest.qNum}}. {{quest.question}}?</h3>
+            <div class=row>
+                <div class="col-sm-3 text-center">
+                    {{quest.opt1}} <input type="radio" formControlName="{{'q' + quest.qNum}}" value=1>
+                </div>
+                <div class="col-sm-3 text-center">
+                    {{quest.opt2}} <input type="radio" formControlName="{{'q' + quest.qNum}}" value=2>
+                </div>
+                <div class="col-sm-3 text-center">
+                    {{quest.opt3}} <input type="radio" formControlName="{{'q' + quest.qNum}}" value=3>
+                </div>
+                <div class="col-sm-3 text-center">
+                    {{quest.opt4}} <input type="radio" formControlName="{{'q' + quest.qNum}}" value=4>
+                </div>
+            </div>
+            <hr/>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <input type="submit" class="btn btn-primary">
+            </div>
+        </div>    
+    </form>
+    <br/>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <input type="button" class="btn btn-secondary" value="Back To Home"(click)=goToHome()>
+        </div>
+    </div>
+</div> 

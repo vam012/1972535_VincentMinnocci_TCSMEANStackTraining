@@ -1,0 +1,102 @@
+[
+    {
+        "qNum":1,
+        "question":"What is 1+1",
+        "opt1":"1",
+        "opt2":"2",
+        "opt3":"3",
+        "opt4":"4",
+        "corrOpt":2,
+        "userChoice":0
+    },
+    {
+        "qNum":2,
+        "question":"What is 4*5",
+        "opt1":"9",
+        "opt2":"15",
+        "opt3":"33",
+        "opt4":"20",
+        "corrOpt":4,
+        "userChoice":0
+    },
+    {
+        "qNum":3,
+        "question":"What is 18/3",
+        "opt1":"2",
+        "opt2":"4",
+        "opt3":"6",
+        "opt4":"8",
+        "corrOpt":3,
+        "userChoice":0
+    },
+    {
+        "qNum":4,
+        "question":"What is 24-1",
+        "opt1":"0",
+        "opt2":"23",
+        "opt3":"1",
+        "opt4":"24",
+        "corrOpt":2,
+        "userChoice":0
+    },
+    {
+        "qNum":5,
+        "question":"What is 12^2",
+        "opt1":"12",
+        "opt2":"24",
+        "opt3":"144",
+        "opt4":"14",
+        "corrOpt":3,
+        "userChoice":0
+    },
+    {
+        "qNum":6,
+        "question":"What is 4+8",
+        "opt1":"4",
+        "opt2":"8",
+        "opt3":"12",
+        "opt4":"16",
+        "corrOpt":3,
+        "userChoice":0
+    },
+    {
+        "qNum":7,
+        "question":"What is 7*7",
+        "opt1":"49",
+        "opt2":"48",
+        "opt3":"47",
+        "opt4":"44",
+        "corrOpt":1,
+        "userChoice":0
+    },
+    {
+        "qNum":8,
+        "question":"What is 18/18",
+        "opt1":"18",
+        "opt2":"0",
+        "opt3":"2",
+        "opt4":"1",
+        "corrOpt":4,
+        "userChoice":0
+    },
+    {
+        "qNum":9,
+        "question":"What is 99+1",
+        "opt1":"97",
+        "opt2":"98",
+        "opt3":"100",
+        "opt4":"101",
+        "corrOpt":3,
+        "userChoice":0
+    },
+    {
+        "qNum":10,
+        "question":"What is 9+10",
+        "opt1":"21",
+        "opt2":"18",
+        "opt3":"20",
+        "opt4":"19",
+        "corrOpt":4,
+        "userChoice":0
+    }
+]

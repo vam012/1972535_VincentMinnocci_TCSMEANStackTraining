@@ -1,0 +1,47 @@
+<div class=container>
+    <h2>Results</h2>
+    <div class="row justify-content-center" *ngFor="let quest of qArr; let i = index">
+        <h3>{{quest.qNum}}. {{quest.question}}?</h3>
+        <div class="row justify-content-center">
+            <div class="col-sm-6 text-center">
+                You Picked:
+                <a *ngIf="aArr[i]==1">{{quest.opt1}}</a>
+                <a *ngIf="aArr[i]==2">{{quest.opt2}}</a>
+                <a *ngIf="aArr[i]==3">{{quest.opt3}}</a>
+                <a *ngIf="aArr[i]==4">{{quest.opt4}}</a>
+                <a *ngIf="aArr[i]==0">No Choice Made</a>
+            </div>
+            <div class="col-sm-6 text-center">
+                Correct Answer is:
+                <a *ngIf="quest.corrOpt==1">{{quest.opt1}}</a>
+                <a *ngIf="quest.corrOpt==2">{{quest.opt2}}</a>
+                <a *ngIf="quest.corrOpt==3">{{quest.opt3}}</a>
+                <a *ngIf="quest.corrOpt==4">{{quest.opt4}}</a>
+            </div>
+            <div class="col-12 text-center text-success" *ngIf="quest.corrOpt==aArr[i]">
+                <h3>Correct</h3>
+            </div>
+            <div class="col-12 text-center text-danger" *ngIf="quest.corrOpt!=aArr[i]">
+                <h3>Wrong</h3>
+            </div>
+        </div>
+        <hr/>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 text-center text-success" *ngIf="finalScore>=7">
+            <h1>You passed {{finalScore}}/10...</h1>
+        </div>
+        <div class="col-12 text-center text-danger" *ngIf="finalScore<7">
+            <h1>You failed {{finalScore}}/10...</h1>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <input type="button" class="btn btn-secondary" value="Back To Home"(click)=goToHome()>
+        </div>
+    </div>
+</div> 

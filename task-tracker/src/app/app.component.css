@@ -1,0 +1,14 @@
+app-todo-task{
+    float:left;
+    width:33%;
+}
+
+app-todo-list{
+    float:right;
+    width:64%;
+}
+header{
+    border:1px solid black;
+    padding-top:1%;
+    margin-bottom: 2%;
+}

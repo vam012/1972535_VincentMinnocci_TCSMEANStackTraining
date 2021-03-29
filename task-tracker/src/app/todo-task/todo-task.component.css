@@ -1,0 +1,19 @@
+div{
+    padding:5%;
+    border: 1px solid black;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+mat-form-field{
+    width:60%;
+    padding-left:20%;
+}
+
+#errMsg{
+    color:red;
+    text-align: right;
+}

@@ -1,0 +1,29 @@
+<div>
+    <h2>Add A New Task</h2>
+    <form #taskRef="ngForm" (ngSubmit)="addNewTask(taskRef.value)">
+        <mat-form-field>
+            <mat-label>Task ID</mat-label>
+            <input matInput type=text name="id" required ngModel/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Assignees Name</mat-label>
+            <input matInput type=text name ="aName" required ngModel/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Task Name</mat-label>
+            <input matInput type=text name ="tName" required ngModel/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Dead Line</mat-label>
+            <input matInput type="date" name ="deadLine" required ngModel/>
+        </mat-form-field>
+        <br/>
+        <button mat-raised-button color=primary type=submit [disabled]="!taskRef.valid">Store Employee Details</button>
+        <a *ngIf="!taskRef.valid" id="errMsg">*Fill out all fields in the form before submitting</a>
+        &nbsp;&nbsp;
+        <button mat-raised-button type=reset (click)="taskRef.reset()">Clear Fields</button>
+    </form>
+</div>

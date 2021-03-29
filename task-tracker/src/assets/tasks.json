@@ -1,0 +1,52 @@
+{
+  "tasks": [
+    {
+      "id": "03292021",
+      "aName": "John Smith",
+      "tName": "Assign a dummy task",
+      "deadLine": "2021-03-29"
+    },
+    {
+      "id": "402",
+      "aName": "Billy",
+      "tName": "Make a new task",
+      "deadLine": "2021-03-29"
+    },
+    {
+      "id": "101",
+      "aName": "Tester McTestface",
+      "tName": "Check if i compiled correctly",
+      "deadLine": "2021-03-31"
+    },
+    {
+      "id": "201",
+      "aName": "PWA Magoo",
+      "tName": "Check if PWA works",
+      "deadLine": "2021-03-30"
+    },
+    {
+      "id": "301",
+      "aName": "Chuck",
+      "tName": "Check new build",
+      "deadLine": "2021-04-29"
+    },
+    {
+      "id": "401",
+      "aName": "PWA Johnson",
+      "tName": "Check PWA again",
+      "deadLine": "2021-02-28"
+    },
+    {
+      "id": "501",
+      "aName": "Button",
+      "tName": "Check if button works on PWA",
+      "deadLine": "2021-04-01"
+    },
+    {
+      "id": "601",
+      "aName": "Me, Myself, and I",
+      "tName": "Final Assignment",
+      "deadLine": "2021-04-10"
+    }
+  ]
+}

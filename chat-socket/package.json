@@ -1,0 +1,24 @@
+{
+  "name": "1972535_VincentMinnocci_TCSMEANStackTraining",
+  "version": "1.0.0",
+  "description": "This project contains the files involved with the TCS MEAN Stack Training for:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vam012/1972535_VincentMinnocci_TCSMEANStackTraining.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vam012/1972535_VincentMinnocci_TCSMEANStackTraining/issues"
+  },
+  "homepage": "https://github.com/vam012/1972535_VincentMinnocci_TCSMEANStackTraining#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.1"
+  }
+}

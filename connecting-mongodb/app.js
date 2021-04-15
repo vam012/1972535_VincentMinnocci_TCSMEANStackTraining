@@ -33,8 +33,12 @@ getCoursesHTML();
 
 //get calls
 app.get("/",(req,res)=>{res.sendFile(__dirname+"/index.html");});                                       //home
-app.get("/success",(req,res)=>{res.sendFile(__dirname+"/success.html");});                              //successful
-app.get("/failure",(req,res)=>{res.sendFile(__dirname+"/failure.html");});                              //failure
+app.get("/success",(req,res)=>{
+    getCoursesHTML();
+    res.sendFile(__dirname+"/success.html");});                                                         //successful
+app.get("/failure",(req,res)=>{
+    getCoursesHTML();
+    res.sendFile(__dirname+"/failure.html");});                                                         //failure
 app.get("/addCourse",(req,res)=>{res.sendFile(__dirname+"/addCourse.html");});                          //add
 app.get("/deleteCourse",(req,res)=>{res.sendFile(__dirname+"/deleteCourse.html");});                    //delete
 app.get("/updateCourse",(req,res)=>{res.sendFile(__dirname+"/updateCourse.html");});                    //update

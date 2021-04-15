@@ -17,6 +17,7 @@ obj.connect(url,mongoOptions);
 let db = obj.connection;                        
 db.on("error",(err)=>console.log(err)); 
 
+//define course structure
 let courseSchema = obj.Schema({
     _id:Number,
     courseName:String,
@@ -46,6 +47,7 @@ app.get("/getCourses",(req,res)=>{
     getCoursesHTML();
     res.send(courseListHTMLStart+holdStr+courseListHTMLClose)}); //get
 
+//add course
 app.post("/addCourse",(req,res)=>{
     let courseID = eval(req.body.courseID);
     let courseName = req.body.courseName;
@@ -58,6 +60,7 @@ app.post("/addCourse",(req,res)=>{
     getCoursesHTML();
 });
 
+//delete course
 app.post("/deleteCourse",(req,res)=>{
     let courseID = eval(req.body.courseID);
     Course.deleteOne({'_id':courseID,},(err)=>{
@@ -67,6 +70,7 @@ app.post("/deleteCourse",(req,res)=>{
     getCoursesHTML();
 });
 
+//update course
 app.post("/updateCourse",(req,res)=>{
     let courseID = eval(req.body.courseID);
     let courseName = req.body.courseName;
@@ -79,10 +83,11 @@ app.post("/updateCourse",(req,res)=>{
     getCoursesHTML();
 });
 
+//launch server
 app.listen(port,()=>{console.log(`Server is running on port ${port}`)})
 
-
-async function getCoursesHTML(){
+//get updated CourseHTML
+function getCoursesHTML(){
     retStr = ``;
     Course.find({},function(err,res){
         for (let i = 0; i < res.length; i++) {
@@ -124,6 +129,7 @@ let courseListHTMLStart = `
         </thead>
         <tbody>`;
 
+//closing HTML for courselist
 let courseListHTMLClose = `
         </tbody>
     </table>

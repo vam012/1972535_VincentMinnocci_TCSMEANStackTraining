@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Course</title>
+</head>
+<body>
+    <h1>Course Platform</h1>
+    <a href="/">Back to home</a><br/>
+    <h2>Update A Course</h2>
+    <form action"/updateCourse" method="POST">
+        <b>Course ID: </b><input type="text" name="courseID"/><br/>
+        <b>New Course Name: </b><input type="text" name="courseName"/><br/>
+        <b>New Course Description: </b><textarea name="courseDesc" rows="5" cols="30"></textarea><br/>
+        <b>New Course Cost: </b><input type="text" name="courseCost"/><br/>
+        <input type="submit" value="Submit"><br/>
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

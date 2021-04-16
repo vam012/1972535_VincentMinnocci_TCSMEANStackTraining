@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .sameClient{
+            color:red;
+        }
+        .otherClient{
+            text-align: left;
+        }
+        #chatLog{
+            border: 1px solid black;
+        }
+    </style>
+    <script src="/socket.io/socket.io.js"></script> 
+    <script type="text/JavaScript">
+        var socket = io();
+        var clientNum;
+        socket.on("clientNum",(data)=>{clientNum = data;})
+
+        function sendMsg(){
+            var name = document.getElementById("name");
+            var msg = document.getElementById("message");
+            if(name.value =="" || msg.value ==""){
+                window.alert("Must have a name and message")
+            }else{
+                socket.emit("clientMsg",{"name":name.value,"msg":msg.value,"cNum":clientNum});
+                msg.value = "";
+            }
+            
+        }
+        socket.on("serverMsg",(data)=>{
+            var chatDiv = document.getElementById("chatLog");
+            var newDiv = document.createElement("div");
+            if(data.cNum == clientNum){newDiv.className = "sameClient";}
+            else{newDiv.className = "otherClient";}
+            var name = document.createElement("b");
+            name.innerHTML = `${data.name}:`;
+            newDiv.appendChild(name);
+            newDiv.innerHTML += data.msg;
+            chatDiv.insertBefore(newDiv,chatDiv.firstChild);
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Chatting with Socket</h2>
+    <div>
+        <b>Name: </b><input type="text" id="name"><br/>
+        <b>Message: </b><textarea id="message" rows="5"></textarea><br/>
+        <input type="button" value="Send Message" onclick="sendMsg()">
+    </div>
+    <div id="chatLog">
+
+    </div>
+</body>
+</html>

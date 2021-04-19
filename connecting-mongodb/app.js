@@ -28,24 +28,16 @@ let courseSchema = obj.Schema({
 //used to interact with db
 const Course = obj.model("",courseSchema,"courses");
 
-let holdStr="";
-getCoursesHTML();
-
 
 //get calls
 app.get("/",(req,res)=>{res.sendFile(__dirname+"/index.html");});                                       //home
-app.get("/success",(req,res)=>{
-    getCoursesHTML();
-    res.sendFile(__dirname+"/success.html");});                                                         //successful
-app.get("/failure",(req,res)=>{
-    getCoursesHTML();
-    res.sendFile(__dirname+"/failure.html");});                                                         //failure
+app.get("/success",(req,res)=>{res.sendFile(__dirname+"/success.html");});                              //successful
+app.get("/failure",(req,res)=>{res.sendFile(__dirname+"/failure.html");});                              //failure
 app.get("/addCourse",(req,res)=>{res.sendFile(__dirname+"/addCourse.html");});                          //add
 app.get("/deleteCourse",(req,res)=>{res.sendFile(__dirname+"/deleteCourse.html");});                    //delete
 app.get("/updateCourse",(req,res)=>{res.sendFile(__dirname+"/updateCourse.html");});                    //update
-app.get("/getCourses",(req,res)=>{
-    getCoursesHTML();
-    res.send(courseListHTMLStart+holdStr+courseListHTMLClose)}); //get
+app.get("/getCourses",async (req,res)=>{
+    res.send(courseListHTMLStart+(await getCoursesHTML())+courseListHTMLClose)});                       //get
 
 //add course
 app.post("/addCourse",(req,res)=>{
@@ -57,7 +49,6 @@ app.post("/addCourse",(req,res)=>{
         if(err){res.redirect("/failure")}
         else{res.redirect("/success")}
     });
-    getCoursesHTML();
 });
 
 //delete course
@@ -67,7 +58,6 @@ app.post("/deleteCourse",(req,res)=>{
         if(err){res.redirect("/failure")}
         else{res.redirect("/success")}
     });
-    getCoursesHTML();
 });
 
 //update course
@@ -80,16 +70,15 @@ app.post("/updateCourse",(req,res)=>{
         if(err || result.nModified==0){res.redirect("/failure")}
         else{res.redirect("/success")}
     });
-    getCoursesHTML();
 });
 
 //launch server
 app.listen(port,()=>{console.log(`Server is running on port ${port}`)})
 
 //get updated CourseHTML
-function getCoursesHTML(){
+async function getCoursesHTML(){
     retStr = ``;
-    Course.find({},function(err,res){
+    await Course.find({},function(err,res){
         for (let i = 0; i < res.length; i++) {
             const item = res[i];
             retStr+=`<tr><td> ${item._id} </td>`
@@ -99,6 +88,7 @@ function getCoursesHTML(){
         }
         holdStr = retStr;
     });
+    return retStr;
 }
 
 

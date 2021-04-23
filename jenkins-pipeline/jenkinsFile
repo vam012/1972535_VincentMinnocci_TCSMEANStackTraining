@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    stages {
+        stage('Check version') {
+            steps {
+                sh "node --version"
+            }
+        }
+        stage('Build project') {
+            steps {
+               	sh "npm --version"
+		sh "npm install"
+            }
+        }
+        stage('Test application') {
+            steps {
+                sh "node app.js"
+            }
+        }
+        stage('Deploy project') {
+            steps {
+                echo "Deploying project to server"
+            }
+        }
+    }
+}
+

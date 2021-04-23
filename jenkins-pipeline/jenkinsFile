@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test application') {
             steps {
-                sh "node app.js"
+                sh "node jenkins-pipeline/app.js"
             }
         }
         stage('Deploy project') {
